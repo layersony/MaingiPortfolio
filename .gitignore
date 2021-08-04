@@ -1,0 +1,4 @@
+__pycache__/
+envportfolio/
+*.pyc
+db.sqlite3

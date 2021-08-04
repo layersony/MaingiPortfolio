@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_block %}
+<title>Portfolio | Maingi</title>
+{% endblock head_block %}
+
+{% block content_block %}
+
+<section class="home" id="home">
+    <div class="max-width">
+        <div class="home-content">
+            <div class="text-1">Hello, My name</div>
+            <div class="text-2">Samuel Maingi</div>
+            <div class="text-3">And I'm a <span class="typing"></span></div>
+            <a href="#contact">Hire me</a>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="max-width">
+        <h2 class="title">About me</h2>
+        <div class="about-content">
+            <div class="column left">
+                <img src="{% static 'images/avatar.jpeg' %}" alt="Maingi Samuel">
+            </div>
+            <div class="column right">
+                <div class="text">I'm Maingi and I'm a <span class="typing-2"></span></div>
+                <p>{{about}}</p>
+                <!-- <a href="javascript:void();" class="readmore-btn">read more</a> -->
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services" id="services">
+    <div class="max-width">
+        <h2 class="title">My services</h2>
+        <div class="serv-content">
+            <div class="card">
+                <div class="box">
+                    <i class="fas fa-paint-brush"></i>
+                    <div class="text">Full Stack Developer</div>
+                    <p>Develop all sorts of Web applications using Python my bread and butter being Django Framework, Postgres, UWSGI/Gunicorn & Nginx, but picking up a new framework Isn't a Problem</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="text">Data Extraction / Analysis</div>
+                    <p>Extract data from a wide range of Sources either be in Websites, Meta_data, Databases, Excel, Json_files, Xml.
+                        And Analyze it using Python and Pandas.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <i class="fas fa-code"></i>
+                    <div class="text">Networking</div>
+                    <p>Can implement, Manage, Troubleshoot any Network in an Enviroment in which combined with My hacking skills can Improve the Security.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="skills" id="skills">
+    <div class="max-width">
+    <h2 class="title">My skills</h2>
+    <div class="skills-content">
+        <div class="column left">
+            <div class="text">My Creative Skills & Experiences.</div>
+            <p>Mastered the Art of Tackling unexpected problems in an innovating way, Open minded for new solutions and methods of doing, Analysing of information and data to extract meaningful sets of raw data.</p>
+            <!-- <a href="#">Read more</a> -->
+        </div>
+            <div class="column right">
+                <div class="bars">
+                    <div class="info">
+                        <span>Front End Development</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="line fed"></div>
+                </div>
+
+                <div class="bars">
+                    <div class="info">
+                        <span>Networking</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="line net"></div>
+                </div>
+
+                <div class="bars">
+                    <div class="info">
+                        <span>Pen-Testing (Ethical Hacking)</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="line eh"></div>
+                </div>
+
+                <div class="bars">
+                    <div class="info">
+                        <span>Web Dev Django</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="line wdd"></div>
+                </div>
+
+                <div class="bars">
+                    <div class="info">
+                        <span>Data Extraction / Analysis</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="line mysql"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="contact" id="contact">
+    <div class="max-width">
+        <h2 class="title">Hire Me</h2>
+        <div class="contact-content">
+            <div class="column left">
+                <div class="text">Get in Touch</div>
+                <p>Send Me an Email</p>
+                <div class="icons">
+                    <div class="row">
+                        <i class="fas fa-user"></i>
+                        <div class="info">
+                            <div class="head">Name</div>
+                            <div class="sub-title">MAINGI SAMUEL</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info">
+                            <div class="head">Address</div>
+                            <div class="sub-title">NAIROBI, NAIROBI, KENYA</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <i class="fas fa-phone-alt"></i>                        
+                        <div class="info">
+                            <div class="head">Phone Number</div>
+                            <div class="sub-title"><a href="tel:+254796727706">+254796727706</a></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info">
+                            <div class="head">Email</div>
+                            <div class="sub-title">sammaingi4@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column right">
+                <div class="text">HIRE ME</div>
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    <div class="fields">
+                        <div class="field name">
+                            {{hire_me.name}}
+                        </div>
+                        <div class="field email">
+                            {{hire_me.email}}
+                        </div>
+                    </div>
+                    <div class="field textarea">
+                        {{hire_me.message}}
+                    </div>
+ 
+                    <div class="button">
+                        <button type="submit">Send Me a Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content_block %}
